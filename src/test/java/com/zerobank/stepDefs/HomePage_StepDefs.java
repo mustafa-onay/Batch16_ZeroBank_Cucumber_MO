@@ -24,4 +24,9 @@ public class HomePage_StepDefs {
         String actualAccountName = homePage.getAccountName();
         Assert.assertEquals(expectedAccountName,actualAccountName);
     }
+
+    @When("The user navigates to tab: {string}")
+    public void theUserNavigatesToTab(String tabName) {
+        homePage.navigateToTab(tabName);
+    }
 }

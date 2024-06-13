@@ -12,17 +12,23 @@ public class LoginPage extends BasePage{
     private WebElement passwordBox;
     @FindBy (css = "[name='submit']")
     private WebElement signInBtn;
+    @FindBy (css = ".alert.alert-error")
+    private WebElement errorMessage;
 
     public void login (String username, String password) {
         userNameBox.sendKeys(username);
         passwordBox.sendKeys(password);
         signInBtn.click();
-        Driver.get().navigate().back();
+
     }
     public void login () {
         userNameBox.sendKeys(ConfigurationReader.get("usernaem"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
         signInBtn.click();
-        Driver.get().navigate().back();
+
+    }
+
+    public String getErrorMessageText(){
+        return errorMessage.getText();
     }
 }
