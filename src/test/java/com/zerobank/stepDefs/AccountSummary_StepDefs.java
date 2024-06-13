@@ -20,4 +20,9 @@ public class AccountSummary_StepDefs {
         List<String> actualAccountTypes = accountSummaryPage.getAccountSummaryTypeNames();
         Assert.assertEquals(expectedAccountTypes,actualAccountTypes);
     }
+    @Then("The Credit Accounts column names should be as follows")
+    public void the_credit_accounts_column_names_should_be_as_follows(List<String> expected) {
+        List<String> actual = accountSummaryPage.getCreditAccountColumnNames();
+        Assert.assertEquals(expected,actual);
+    }
 }

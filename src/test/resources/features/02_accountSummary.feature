@@ -16,3 +16,7 @@ Feature: Account Summary Tests
       | Investment Accounts |
       | Credit Accounts     |
       | Loan Accounts       |
+    And The Credit Accounts column names should be as follows
+      | Account     |
+      | Credit Card |
+      | Balance     |

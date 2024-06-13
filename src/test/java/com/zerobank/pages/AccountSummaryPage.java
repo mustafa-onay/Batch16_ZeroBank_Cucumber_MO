@@ -10,8 +10,15 @@ public class AccountSummaryPage extends BasePage{
 
     @FindBy(tagName = "h2")
     private List<WebElement> accountSummaryTypes;
+    @FindBy(xpath = "(//table)[3]//th")
+    private List<WebElement> CreditAccountsColumns;
 
     public List<String> getAccountSummaryTypeNames(){
         return BrowserUtils.getElementsText(accountSummaryTypes);
     }
+    public List<String> getCreditAccountColumnNames(){
+        return BrowserUtils.getElementsText(CreditAccountsColumns);
+    }
+
+
 }
